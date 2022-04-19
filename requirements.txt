@@ -1,0 +1,6 @@
+streamlit>=1.8.1
+python-dotenv
+etherscan
+web3
+bip44
+coincurve
