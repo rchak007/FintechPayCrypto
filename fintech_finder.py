@@ -1,20 +1,25 @@
 # Cryptocurrency Wallet
+################################################################################
 
+# This file contains the streamlit app
 
+################################################################################
 # Imports
-import streamlit as st
+import os
 from dataclasses import dataclass
 from typing import Any, List
-from web3 import Web3, HTTPProvider
-from web3 import Account
+
+import etherscan
+import streamlit as st
 from dotenv import load_dotenv
-import os
-import etherscan   
+from web3 import Account, HTTPProvider, Web3
 from web3.middleware import geth_poa_middleware
 ## from etherscan import Etherscan
+
 load_dotenv()
+
 # w3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:7545'))  - Chuck
-## Chucks 
+## Chucks
 WEB3_INFURA_API_KEY =  os.getenv("WEB3_INFURA_API_KEY")
 WEB3_INFURA_PROJECT_ID = os.getenv("WEB3_INFURA_PROJECT_ID")
 # print("WEB3_INFURA_PROJECT_ID =", WEB3_INFURA_PROJECT_ID)
@@ -38,7 +43,7 @@ chain_id = 42
 #print("w3 connected? ", w3.isConnected())
 print("w1 connected? ", w1.isConnected())
 
-# w3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:8545'))   -- 
+# w3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:8545'))   --
 
 # Import Ethereum Transaction Functions into the Fintech Finder Application
 
@@ -68,8 +73,8 @@ candidate_database = {
     #"Jo": ["Jo", "0x9FC6387cb7722b3B919688218368d217C30f255A", "4.7", .19, "Images/jo.jpeg"],
     #"Kendall": ["Kendall", "0xAB10A3D05394d476E4f2d6066fb525A6D7a6D8E8", "4.1", .16, "Images/kendall.jpeg"]
     "Lane": ["Lane", "0xAB4A0C2ed939f32DE20E7118E23fddaF9739aCe0", "4.3", .20, "Images/lane.jpeg"],  # account 2
-    "Ash": ["Ash", "0xbBdBA51a140fcBA90a41e9A5ca290B98e7087104", "5.0", .33, "Images/ash.jpeg"],     # Account 3 
-    "Jo": ["Jo", "0xA6B5e696329691a1bdB0827221482733B76F0638", "4.7", .19, "Images/jo.jpeg"],        # Account 4 
+    "Ash": ["Ash", "0xbBdBA51a140fcBA90a41e9A5ca290B98e7087104", "5.0", .33, "Images/ash.jpeg"],     # Account 3
+    "Jo": ["Jo", "0xA6B5e696329691a1bdB0827221482733B76F0638", "4.7", .19, "Images/jo.jpeg"],        # Account 4
     "Kendall": ["Kendall", "0x00282868a26d11ca1eE85B5B6ff9f667E58Eef19", "4.1", .16, "Images/kendall.jpeg"]   # Account 5
 }
 
@@ -180,8 +185,8 @@ st.sidebar.write(wage)
 ##########################################
 
 # * Call the `send_transaction` function and pass it three parameters:
-    # - Ethereum `account` information. 
- 
+    # - Ethereum `account` information.
+
     #- The `candidate_address` (which will be created and identified in the
     # sidebar when a customer selects a candidate). This will populate the `to`
     # data attribute in the raw transaction.
@@ -195,7 +200,7 @@ st.sidebar.write(wage)
 
 if st.sidebar.button("Send Transaction"):
 
-    
+
     # Call the `send_transaction` function and pass it 3 parameters:
     # Your `account`, the `candidate_address`, and the `wage` as parameters
     # Save the returned transaction hash as a variable named `transaction_hash`
@@ -231,11 +236,11 @@ get_people()
 
 # On the resulting webpage, select a candidate that you would like to hire
 # from the appropriate drop-down menu. Then, enter the number of hours that you
-# would like to hire them for. 
+# would like to hire them for.
 
 # Click the Send Transaction button to sign and send the transaction with
 # your Ethereum account information. If the transaction is successfully
 # communicated to Kovan, validated, and added to a block,
 # a resulting transaction hash code will be written to the Streamlit
 # application sidebar.
-    
+

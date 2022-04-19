@@ -1,19 +1,20 @@
 # Cryptocurrency Wallet
 ################################################################################
 
-# This file contains the Ethereum transaction functions 
+# This file contains the Ethereum transaction functions
 
 ################################################################################
 # Imports
 import os
+
 import requests
-from dotenv import load_dotenv
-load_dotenv()
 from bip44 import Wallet
 from coincurve import PrivateKey
-from web3 import Account
-from web3 import middleware
+from dotenv import load_dotenv
+from web3 import Account, middleware
 from web3.gas_strategies.time_based import medium_gas_price_strategy
+
+load_dotenv()
 
 ################################################################################
 # Wallet functionality
@@ -89,7 +90,7 @@ def send_transaction(w1, account, to, wage, privKey):
     # print ("from inside send txn PrivKey in hex = " , privKey.hex())
     #signed_tx = account.signTransaction(raw_tx)
     print (" Raw txn = ", raw_tx)
-    try: 
+    try:
         signed_tx = w1.eth.account.sign_transaction(raw_tx, private_key=privKey)
     except Exception as error_sign_txn:
         print(" error signing = ", error_sign_txn)
@@ -131,9 +132,9 @@ def send_transaction(w1, account, to, wage, privKey):
     # print(w1.eth.get_transaction(sendTxn))
     # print( w1.eth.get_transaction_receipt(sendTxn) )
     # https://ethereum.stackexchange.com/questions/101513/send-eth-transaction-from-one-address-to-another-with-web3py
-    try: 
+    try:
         receipt1 = w1.eth.wait_for_transaction_receipt(sendTxn)
     except Exception as error_receipt:
         print (" Exception receipt = ". error_receipt)
-    
+
     return sendTxn
