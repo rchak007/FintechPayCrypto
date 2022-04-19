@@ -1,7 +1,7 @@
 # Cryptocurrency Wallet
 ################################################################################
 
-# This file contains the Ethereum transaction functions that you have created throughout this module’s lessons. By using import statements, you will integrate this `crypto_wallet.py` Python script into the Fintech Finder interface program that is found in the `fintech_finder.py` file.
+# This file contains the Ethereum transaction functions 
 
 ################################################################################
 # Imports
@@ -62,7 +62,7 @@ def get_balance(w1, address):
 
 
 def send_transaction(w1, account, to, wage, privKey):
-    """Send an authorized transaction to the Ganache blockchain."""
+    """Send an authorized transaction to the Kovan blockchain."""
     # Set gas price strategy
     w1.eth.setGasPriceStrategy(medium_gas_price_strategy)
 
