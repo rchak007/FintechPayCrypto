@@ -10,9 +10,29 @@ Integrated the Ethereum blockchain network into the application in order to enab
 
 
 
+
+
+### Run app online!
+
+Deployed app is online for live run too - 
+
+https://share.streamlit.io/rchak007/fintechpaycrypto/main/fintech_finder.py
+
+Note - as long as the client test ETH address has some ETH you can pay wages to employees.
+
+
+
 ### Implementation
 
 #### Streamlit, Python 
+
+
+
+
+
+
+
+
 
 Used two Python files, both of which are contained in the main folder.
 
