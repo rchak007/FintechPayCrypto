@@ -79,7 +79,8 @@ def send_transaction(w1, account, to, wage, privKey):
         "from": account.address,
         "value": value,
         "gas": gasEstimate,
-        "gasPrice": w1.toWei('150','gwei'),
+        # "gasPrice": w1.toWei('150','gwei'),
+        "gasPrice": w1.eth.generateGasPrice(),
         "chainId": 42,  # Kovan
         # "nonce": w1.eth.getTransactionCount(account.address)
         "nonce": n1
