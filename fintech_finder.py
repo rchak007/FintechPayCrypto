@@ -207,7 +207,10 @@ if st.sidebar.button("Send Transaction"):
 
     # Write the returned transaction hash to the screen
     st.sidebar.write(transaction_hash.hex())
-
+    txnHex = transaction_hash.hex()
+    #url = "https://kovan.etherscan.io/tx/0x17511a0ef5144cb2815ad239ad3bf31fa94a5a4846d1253b0b59736a6f4fe8d4"
+    url = "https://kovan.etherscan.io/tx/" + txnHex
+    st.sidebar.markdown("##### Transaction on Kovan Etherscan: (%s)" % url)
     # Celebrate your successful payment
     st.balloons()
 

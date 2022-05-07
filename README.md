@@ -76,15 +76,23 @@ There is a Send button -
 
 ![fintechPayment](Images/fintechPayment.png)
 
+you can also click on the link 
+
+
+
+![image-20220507091451014](Images/valKovan2.png)
+
+
+
 
 
 ### Validate Transaction Hash on Kovan Etherscan
 
 Once Send transaction is selected then the Ethereum amount will be transferred from Client address to Employees address and a transaction Hash is shown.
 
-This can easily verified on the Kovan Etherscan explorer.
+This can easily verified on the Kovan Etherscan explorer from link.
 
-![fintechKovanPayment](Images/fintechKovanPayment.png)
+![image-20220507091719925](Images/kovanHash.png)
 
 
 
